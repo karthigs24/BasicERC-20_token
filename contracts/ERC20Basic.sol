@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity 0.6.0;
 
 interface IERC20 {
     function totalSupply() external view returns (uint256);
@@ -49,7 +49,7 @@ contract ERC20Basic is IERC20 {
 
     uint256 totalSupply_;
 
-   using SafeMath for uint256;
+    using SafeMath for uint256;
 
     constructor(uint256 total) public {
         totalSupply_ = total;
@@ -116,18 +116,15 @@ contract ERC20Basic is IERC20 {
     }
 }
 
-
-
-
 library SafeMath {
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-      assert(b <= a);
-      return a - b;
+        assert(b <= a);
+        return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
-      uint256 c = a + b;
-      assert(c >= a);
-      return c;
+        uint256 c = a + b;
+        assert(c >= a);
+        return c;
     }
 }
